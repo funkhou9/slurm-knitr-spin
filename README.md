@@ -21,7 +21,7 @@ To install, execute the following steps from the remote server:
 2. cd into `slurm-knitr-spin` and ensure both `spin` and `knitr_spin.R` are executable
 
 	```sh
-	cd spin-my-script
+	cd slurm-knitr-spin
 	chmod +x spin
 	chmod +x knitr_spin.R
 	```
