@@ -7,7 +7,6 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Note on other languages](#note-on-other-languages)
 
 ## Installation
 
@@ -16,10 +15,10 @@ To install, execute the following steps from the remote server:
 1. Cone this repository
 
     ```sh
-    git clone https://github.com/funkhou9/spin-my-script.git
+    git clone https://github.com/funkhou9/slurm-knitr-spin
     ```
 
-2. cd into `spin-my-script` and ensure both `spin` and `knitr_spin.R` are executable
+2. cd into `slurm-knitr-spin` and ensure both `spin` and `knitr_spin.R` are executable
 
 	```sh
 	cd spin-my-script
@@ -27,16 +26,16 @@ To install, execute the following steps from the remote server:
 	chmod +x knitr_spin.R
 	```
 
-3. Add `spin-my-script` to your path, however you like. For instance in your ~/.bashrc file add:
+3. Add `slurm-knitr-spin` to your path, however you like. For instance in your ~/.bashrc file add:
 
 	```sh
-	export PATH=$PATH:/path/to/spin-my-script/
+	export PATH=$PATH:/path/to/slurm-knitr-spin/
 	```
 
 ## Usage
 
 
-Using `$ spin <script.R> intel14 00:10:00 8` will submit `<script.R>` to the `intel14` cluster with a walltime of `10 minutes` and `8GB` of RAM. You must specify those four arguments: cluster, walltime, RAM.
+Using `$ spin <script.R> intel14 00:10:00 8` will submit `<script.R>` to the `intel18` cluster with a walltime of `10 minutes` and `8GB` of RAM. You must specify those four arguments: cluster, walltime, RAM.
 
 Internally, `knitr::spin(<script.R>)` is used to convert `<script.R>` into `<script.md>`, the *literate* version of the same script.
 
