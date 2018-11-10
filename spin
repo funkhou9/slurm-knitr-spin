@@ -1,5 +1,5 @@
 echo '#!/usr/bin/bash --login' > base.sh
-echo '#SBATCH --job-name=' `echo $1 | cut -f1 -d.` >> base.sh
+echo '#SBATCH --job-name='`echo $1 | cut -f1 -d.` >> base.sh
 echo '#SBATCH --constraint='$2 >> base.sh
 echo '#SBATCH --time='$3 >> base.sh
 echo '#SBATCH --mem='$4'Gb' >> base.sh
