@@ -7,7 +7,7 @@ echo '#SBATCH --nodes=1' >> base.sh
 echo '#SBATCH --ntasks=1' >> base.sh
 echo '#SBATCH --cpus-per-task=1' >> base.sh
 echo '#SBATCH --mail-type=FAIL' >> base.sh
-echo '#SBATCH --output='`echo $1 | cut -f1 -d.`'_literate/%x.out' >> base.sh
+#echo '#SBATCH --output='`echo $1 | cut -f1 -d.`'_literate/%x.out' >> base.sh
 
 echo 'cd '`pwd` >> base.sh
 
