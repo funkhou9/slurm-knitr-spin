@@ -1,8 +1,9 @@
 echo '#!/usr/bin/bash --login' > base.sh
 echo '#SBATCH --job-name='`echo $1 | cut -f1 -d.` >> base.sh
-echo '#SBATCH --constraint='$2 >> base.sh
-echo '#SBATCH --time='$3 >> base.sh
-echo '#SBATCH --mem='$4'Gb' >> base.sh
+echo '#SBATCH --qos='$2 >> base.sh
+echo '#SBATCH --constraint='$3 >> base.sh
+echo '#SBATCH --time='$4 >> base.sh
+echo '#SBATCH --mem='$5'Gb' >> base.sh
 echo '#SBATCH --nodes=1' >> base.sh
 echo '#SBATCH --ntasks=1' >> base.sh
 echo '#SBATCH --cpus-per-task=1' >> base.sh
