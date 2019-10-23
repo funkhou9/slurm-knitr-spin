@@ -35,9 +35,9 @@ To install, execute the following steps from the remote server:
 ## Usage
 
 
-Using `$ spin <script.R> intel14 00:10:00 8` will submit `<script.R>` to the `intel18` cluster with a walltime of `10 minutes` and `8GB` of RAM. You must specify those four arguments: cluster, walltime, RAM.
+Spin must be used with the following command line arguments `$ spin <my-script.R> <qos> <constraints> <time> <mem (in Gb)>`. See SLURM manual for description of arguments.
 
-Internally, `knitr::spin(<script.R>)` is used to convert `<script.R>` into `<script.md>`, the *literate* version of the same script.
+Internally, `knitr::spin(<script.R>)` is used to convert `<script.R>` into `<script.md>`, the markdown version of the same script.
 
 Additionally your project space will be updated. Assuming your project space looks something like this:
 
@@ -55,7 +55,7 @@ project/
     ...
 ```
 
-and `$ spin project/subfolder1/1-script.R intel14 00:10:00 8` is called, the project space will update to:
+and `$ spin 1.script.R ...` is called from within subfolder1, the project space will update to:
 
 ```
 project/
@@ -64,7 +64,7 @@ project/
 └───subfolder1/
     │   subfolder1.md
     │   1-script.R
-    |	1-script_literate/
+    |	1-script/
     |	|
     |	└─ 1-script.md
     |      1-script.out

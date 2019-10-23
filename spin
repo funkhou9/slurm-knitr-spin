@@ -14,19 +14,19 @@ echo 'cd '`pwd` >> base.sh
 
 echo 'knitr_spin.R' $1 >> base.sh
 
-echo 'if [ -d '`echo $1 | cut -f1 -d.`'_literate/ ]' >> base.sh
+echo 'if [ -d '`echo $1 | cut -f1 -d.`]' >> base.sh
 echo '  then' >> base.sh
-echo '	  rm -rf' `echo $1 | cut -f1 -d.`'_literate/' >> base.sh
+echo '	  rm -rf' `echo $1 | cut -f1 -d.` >> base.sh
 echo 'fi' >> base.sh
 
-echo 'mkdir' `echo $1 | cut -f1 -d.`'_literate/' >> base.sh
+echo 'mkdir' `echo $1 | cut -f1 -d.` >> base.sh
 
 echo 'if [ -d figure/ ]' >> base.sh
 echo '  then' >> base.sh
-echo '	  mv figure/ '`echo $1 | cut -f1 -d.`'_literate/' >> base.sh
+echo '	  mv figure/ '`echo $1 | cut -f1 -d.` >> base.sh
 echo 'fi' >> base.sh
 
-echo 'mv '`echo $1 | cut -f1 -d.`'.md' `echo $1 | cut -f1 -d.`'_literate/' >> base.sh
+echo 'mv '`echo $1 | cut -f1 -d.`'.md' `echo $1 | cut -f1 -d.` >> base.sh
 
 echo 'rm '`echo $1 | cut -f1 -d.`'.html' >> base.sh
 
