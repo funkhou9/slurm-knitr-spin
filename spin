@@ -1,6 +1,6 @@
 echo '#!/usr/bin/bash --login' > base.sh
 echo '#SBATCH --job-name='`echo $1 | cut -f1 -d.` >> base.sh
-echo '#SBATCH --part='$2 >> base.sh
+echo '#SBATCH --qos='$2 >> base.sh
 echo '#SBATCH --time='$3 >> base.sh
 echo '#SBATCH --mem='$4'Gb' >> base.sh
 echo '#SBATCH --nodes=1' >> base.sh
