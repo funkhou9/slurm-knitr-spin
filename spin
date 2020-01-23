@@ -10,8 +10,9 @@ echo '#SBATCH --mail-type=FAIL' >> base.sh
 #echo '#SBATCH --output='`echo $1 | cut -f1 -d.`'_literate/%x.out' >> base.sh
 
 echo 'cd '`pwd` >> base.sh
-
-echo 'knitr_spin.R' $1 >> base.sh
+echo 'ml purge' >> base.sh
+echo 'ml R/3.5.0' >> base.sh
+echo 'Rscript knitr_spin.R' $1 >> base.sh
 
 echo 'if [ -d '`echo $1 | cut -f1 -d.`' ]' >> base.sh
 echo '  then' >> base.sh
